@@ -4,98 +4,174 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Custom Fonts */
+@font-face {
+  font-family: 'onepiece';
+  src: url('/fonts/onepiece.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Attackontitan';
+  src: url('/fonts/Attackontitan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --radius: 0.625rem;
-  
-  /* Attack on Titan Light Theme - Survey Corps Palette */
-  --background: oklch(0.96 0.01 85); /* Warm parchment/canvas */
-  --foreground: oklch(0.25 0.02 50); /* Deep military brown */
-  
-  --card: oklch(0.98 0.008 80);
-  --card-foreground: oklch(0.25 0.02 50);
-  
-  --popover: oklch(0.99 0.005 85);
-  --popover-foreground: oklch(0.25 0.02 50);
-  
-  --primary: oklch(0.45 0.08 145); /* Survey Corps green */
-  --primary-foreground: oklch(0.98 0.01 85);
-  
-  --secondary: oklch(0.55 0.06 75); /* Khaki/military tan */
-  --secondary-foreground: oklch(0.15 0.01 50);
-  
-  --muted: oklch(0.88 0.015 70);
-  --muted-foreground: oklch(0.50 0.03 60);
-  
-  --accent: oklch(0.62 0.18 35); /* Burnt orange/rust - Titan steam */
-  --accent-foreground: oklch(0.98 0.01 85);
-  
-  --destructive: oklch(0.55 0.22 25); /* Blood red/Titan crimson */
-  
-  --border: oklch(0.82 0.02 70);
-  --input: oklch(0.85 0.02 75);
-  --ring: oklch(0.45 0.08 145);
-  
-  /* Attack on Titan Chart Colors */
-  --chart-1: oklch(0.45 0.08 145); /* Survey Corps green */
-  --chart-2: oklch(0.62 0.18 35); /* Titan orange */
-  --chart-3: oklch(0.40 0.06 50); /* Military brown */
-  --chart-4: oklch(0.55 0.22 25); /* Crimson/blood */
-  --chart-5: oklch(0.70 0.04 85); /* Stone/wall grey */
-  
-  --sidebar: oklch(0.94 0.015 75);
-  --sidebar-foreground: oklch(0.25 0.02 50);
-  --sidebar-primary: oklch(0.45 0.08 145);
-  --sidebar-primary-foreground: oklch(0.98 0.01 85);
-  --sidebar-accent: oklch(0.88 0.015 70);
-  --sidebar-accent-foreground: oklch(0.25 0.02 50);
-  --sidebar-border: oklch(0.82 0.02 70);
-  --sidebar-ring: oklch(0.45 0.08 145);
+
+  /*
+   * ═══════════════════════════════════════════════════════
+   *   TITAN SEA — Light Theme
+   *   Attack on Titan × One Piece Fusion
+   *
+   *   AoT:  Survey Corps greens, military khaki, parchment,
+   *         Wall stone greys, Titan crimson
+   *   OP:   Straw Hat gold, Grand Line teal, Marineford white,
+   *         Wano scarlet, treasure amber
+   *
+   *   Philosophy: The walls confine. The sea beckons.
+   *   This palette sits at the horizon between them —
+   *   earthy military restraint cracked open by oceanic
+   *   wonder and pirate-gold ambition.
+   * ═══════════════════════════════════════════════════════
+   */
+
+  /* Base canvas: warm parchment meets sea-bleached sail cloth */
+  --background: oklch(0.96 0.012 82);        /* AoT parchment tinted with OP sea salt */
+  --foreground: oklch(0.22 0.025 48);        /* Deep AoT military ink */
+
+  --card: oklch(0.975 0.01 78);
+  --card-foreground: oklch(0.22 0.025 48);
+
+  --popover: oklch(0.985 0.008 82);
+  --popover-foreground: oklch(0.22 0.025 48);
+
+  /* Primary: Survey Corps green — the color of those who dare beyond the walls */
+  --primary: oklch(0.44 0.09 148);
+  --primary-foreground: oklch(0.97 0.01 82);
+
+  /* Secondary: Grand Line teal — the sea calls to the soldiers */
+  --secondary: oklch(0.58 0.09 195);         /* OP teal/ocean blue replacing khaki */
+  --secondary-foreground: oklch(0.12 0.015 195);
+
+  /* Muted: Wall Maria limestone — ancient stone, eroded by time */
+  --muted: oklch(0.87 0.018 72);
+  --muted-foreground: oklch(0.50 0.025 62);
+
+  /* Accent: Straw Hat gold — Luffy's hat, the treasure of freedom */
+  --accent: oklch(0.78 0.16 85);             /* OP gold replaces AoT rust-orange */
+  --accent-foreground: oklch(0.18 0.03 50);
+
+  /* Destructive: Wano scarlet × Titan crimson — blood shared across both worlds */
+  --destructive: oklch(0.55 0.23 23);
+
+  --border: oklch(0.82 0.02 72);
+  --input: oklch(0.85 0.018 76);
+  --ring: oklch(0.58 0.09 195);              /* OP teal ring focus — the horizon */
+
+  /*
+   * Chart palette — the six factions:
+   * 1. Survey Corps Green  (AoT)
+   * 2. Straw Hat Gold      (OP)
+   * 3. Grand Line Teal     (OP)
+   * 4. Titan Crimson       (AoT)
+   * 5. Marine Navy Blue    (OP)
+   * 6. Wall Stone Grey     (AoT)
+   */
+  --chart-1: oklch(0.44 0.09 148);          /* Survey Corps green */
+  --chart-2: oklch(0.78 0.16 85);           /* Straw Hat gold */
+  --chart-3: oklch(0.58 0.09 195);          /* Grand Line teal */
+  --chart-4: oklch(0.55 0.23 23);           /* Titan/Wano crimson */
+  --chart-5: oklch(0.40 0.10 240);          /* Marine navy */
+
+  /* Sidebar: aged ship wood meets military barracks wall */
+  --sidebar: oklch(0.93 0.018 76);
+  --sidebar-foreground: oklch(0.22 0.025 48);
+  --sidebar-primary: oklch(0.44 0.09 148);
+  --sidebar-primary-foreground: oklch(0.97 0.01 82);
+  --sidebar-accent: oklch(0.87 0.018 72);
+  --sidebar-accent-foreground: oklch(0.22 0.025 48);
+  --sidebar-border: oklch(0.82 0.02 72);
+  --sidebar-ring: oklch(0.58 0.09 195);
 }
 
 .dark {
-  /* Attack on Titan Dark Theme - Wall Maria at Night */
-  --background: oklch(0.18 0.015 50); /* Dark stone/night */
-  --foreground: oklch(0.92 0.01 85); /* Aged parchment text */
-  
-  --card: oklch(0.22 0.02 55);
-  --card-foreground: oklch(0.92 0.01 85);
-  
-  --popover: oklch(0.20 0.02 52);
-  --popover-foreground: oklch(0.92 0.01 85);
-  
-  --primary: oklch(0.55 0.10 145); /* Brighter Survey Corps green */
-  --primary-foreground: oklch(0.12 0.01 50);
-  
-  --secondary: oklch(0.35 0.04 65); /* Darker military tan */
-  --secondary-foreground: oklch(0.92 0.01 85);
-  
-  --muted: oklch(0.32 0.025 55);
-  --muted-foreground: oklch(0.65 0.03 75);
-  
-  --accent: oklch(0.68 0.20 30); /* Glowing titan orange */
-  --accent-foreground: oklch(0.12 0.01 50);
-  
-  --destructive: oklch(0.60 0.24 22); /* Bright blood red */
-  
-  --border: oklch(0.35 0.02 55);
-  --input: oklch(0.30 0.025 52);
-  --ring: oklch(0.55 0.10 145);
-  
-  /* Dark mode chart colors - more vibrant */
-  --chart-1: oklch(0.55 0.10 145); /* Survey Corps green */
-  --chart-2: oklch(0.68 0.20 30); /* Titan glow */
-  --chart-3: oklch(0.75 0.05 75); /* Sandy beige */
-  --chart-4: oklch(0.60 0.24 22); /* Bright crimson */
-  --chart-5: oklch(0.50 0.03 240); /* Steel blue */
-  
-  --sidebar: oklch(0.16 0.02 48);
-  --sidebar-foreground: oklch(0.92 0.01 85);
-  --sidebar-primary: oklch(0.55 0.10 145);
-  --sidebar-primary-foreground: oklch(0.12 0.01 50);
-  --sidebar-accent: oklch(0.28 0.025 53);
-  --sidebar-accent-foreground: oklch(0.92 0.01 85);
-  --sidebar-border: oklch(0.35 0.02 55);
-  --sidebar-ring: oklch(0.55 0.10 145);
+  /*
+   * ═══════════════════════════════════════════════════════
+   *   MIDNIGHT OCEAN — Dark Theme
+   *   Attack on Titan × One Piece Fusion
+   *
+   *   AoT:  Wall Maria at night, underground caves,
+   *         ember-lit Titan steam
+   *   OP:   Deep sea abyss, Fishman Island depths,
+   *         bioluminescent Grand Line nights
+   *
+   *   Philosophy: Below the walls lies the sea.
+   *   Below the sea lies the truth.
+   * ═══════════════════════════════════════════════════════
+   */
+
+  /* Base: deep sea stone — Fishman Island meets underground AoT caves */
+  --background: oklch(0.16 0.022 220);       /* Deep ocean/cave darkness with blue tint */
+  --foreground: oklch(0.93 0.012 82);        /* Aged parchment — Gol D. Roger's letters */
+
+  --card: oklch(0.20 0.025 215);
+  --card-foreground: oklch(0.93 0.012 82);
+
+  --popover: oklch(0.18 0.022 218);
+  --popover-foreground: oklch(0.93 0.012 82);
+
+  /* Primary: glowing Survey Corps green — ODM gear cutting through dark sky */
+  --primary: oklch(0.58 0.12 148);
+  --primary-foreground: oklch(0.10 0.015 50);
+
+  /* Secondary: bioluminescent OP teal — Fishman Island coral glow */
+  --secondary: oklch(0.42 0.08 195);
+  --secondary-foreground: oklch(0.93 0.012 82);
+
+  /* Muted: deep trench rock — the abyss below Marineford */
+  --muted: oklch(0.28 0.03 210);
+  --muted-foreground: oklch(0.65 0.035 78);
+
+  /* Accent: ember Titan gold — molten, radiant, dangerous */
+  --accent: oklch(0.75 0.19 78);             /* Warmer, more golden in dark mode */
+  --accent-foreground: oklch(0.10 0.02 50);
+
+  /* Destructive: Titan nape glow × Wano blade — the kill shot */
+  --destructive: oklch(0.62 0.26 20);
+
+  --border: oklch(0.32 0.03 210);
+  --input: oklch(0.26 0.028 212);
+  --ring: oklch(0.58 0.12 148);              /* Bright ODM-green focus ring */
+
+  /*
+   * Dark chart palette — more vivid, bioluminescent quality:
+   * 1. Glowing ODM Green   (AoT)
+   * 2. Treasure Gold       (OP)
+   * 3. Coral Reef Teal     (OP)
+   * 4. Molten Titan Red    (AoT)
+   * 5. Marine Deep Blue    (OP)
+   */
+  --chart-1: oklch(0.58 0.12 148);          /* Glowing Survey Corps */
+  --chart-2: oklch(0.80 0.18 82);           /* Treasure gold */
+  --chart-3: oklch(0.62 0.12 192);          /* Bioluminescent teal */
+  --chart-4: oklch(0.62 0.26 20);           /* Molten Titan */
+  --chart-5: oklch(0.52 0.14 238);          /* Marine deep blue */
+
+  /* Sidebar: ship hull below waterline meets Titan-lit barracks */
+  --sidebar: oklch(0.13 0.02 218);
+  --sidebar-foreground: oklch(0.93 0.012 82);
+  --sidebar-primary: oklch(0.58 0.12 148);
+  --sidebar-primary-foreground: oklch(0.10 0.015 50);
+  --sidebar-accent: oklch(0.25 0.028 212);
+  --sidebar-accent-foreground: oklch(0.93 0.012 82);
+  --sidebar-border: oklch(0.32 0.03 210);
+  --sidebar-ring: oklch(0.58 0.12 148);
 }
 
 @theme inline {
@@ -142,5 +218,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .op-text {
+    font-family: 'onepiece', sans-serif;
+  }
+  
+  .aot-text {
+    font-family: 'Attackontitan', sans-serif;
   }
 }

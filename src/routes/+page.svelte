@@ -1,6 +1,5 @@
 <script>
-    import Navbar from "$lib/components/homepage/navbar.svelte";
+	import SplitHero from '$lib/components/homepage/split-hero.svelte';
 </script>
-<div>
-    <Navbar />
-</div>
+
+<SplitHero />
